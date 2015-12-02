@@ -44,7 +44,7 @@ queue.destroy();
 
 Once a queue is destroyed, any further usage will result in unpredictable behavior.
 
-Any pending jobs in the queue will automatically be cancelled.
+Any pending jobs in the queue will automatically be cancelled.  Any job instances should report `Ti.Async.STATUS_CANCELLED` as their `status` property if they are cancelled when the queue is destroyed.
 
 ##### Referencing the Main Queue
 
