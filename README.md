@@ -160,6 +160,8 @@ Once a job is cancelled, the `status` property on the job instance will be set t
 
 You cannot cancel a running job. If you attempt to cancel a running job, the request will be ignored.
 
+Once a job is cancelled, it will be removed from the queue and if there is a pending job, it will then move into the running state.
+
 
 ## Timeline
 
@@ -171,4 +173,4 @@ The goal of this proposal is to get flushed out ASAP so that it can be incorpora
 
 ## Legal Stuff
 
-This proposal is non-binding and may not be implemented, may be implemented partially or not at all. Any intellectual property developed as part of this proposal is owned and Copyright (c) 2015 by Appcelerator, Inc. All Rights Reserved.
+This proposal is non-binding and may not be implemented, may be implemented partially, differently or not at all. Any intellectual property developed as part of this proposal is owned and Copyright (c) 2015 by Appcelerator, Inc. All Rights Reserved.
