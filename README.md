@@ -129,10 +129,10 @@ var job = queue.dispatch(function (imports, exports) {
 The following are the valid job states:
 
 - *STATUS_CREATED* - the job has been created ("queued") but not yet executed
-- *RUNNING* - the job is currently running
-- *COMPLETED* - the job has completed running without error or cancellation
-- *ERRORED* - the job encountered an unhandled exception
-- *CANCELLED* - the job was cancelled
+- *STATUS_RUNNING* - the job is currently running
+- *STATUS_COMPLETED* - the job has completed running without error or cancellation
+- *STATUS_ERRORED* - the job encountered an unhandled exception
+- *STATUS_CANCELLED* - the job was cancelled
  
 #### Handling Job Errors
 
@@ -145,6 +145,21 @@ var job = queue.dispatch(function (imports, exports) {
    // err is the Error object for the exception
 });
 ```
+
+#### Cancelling a job
+
+You can cancel a job with the `cancel` method on the job instance.
+
+```javascript
+var job = queue.dispatch(function (imports, exports) {
+});
+job.cancel();
+```
+
+Once a job is cancelled, the `status` property on the job instance will be set to `Ti.Async.STATUS_CANCELLED`.
+
+You cannot cancel a running job. If you attempt to cancel a running job, the request will be ignored.
+
 
 ## Timeline
 
