@@ -162,6 +162,9 @@ You cannot cancel a running job. If you attempt to cancel a running job, the req
 
 Once a job is cancelled, it will be removed from the queue and if there is a pending job, it will then move into the running state.
 
+## Implementation Impacts
+
+Currently in master for both Android and iOS, we have a `tiapp.xml` setting which drives whether we use the kroll thread or UI thread for JS.  We need to re-work the current compiler directive driven enablement to be runtime enabled.  For example, in iOS, we need the Kroll subsystem to be able to be smart about which thread to run on and manage threading for the context appropriately.
 
 ## Timeline
 
