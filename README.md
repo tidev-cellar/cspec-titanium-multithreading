@@ -172,8 +172,8 @@ The implementation has not been scheduled, yet.
 
 ## Status
 
-12-02-2015 - Initial Draft
-10-24-2016 - Update Timeline and Copyright
+- 12-02-2015 - Initial Draft
+- 10-24-2016 - Update Timeline and Copyright
 
 ## Legal Stuff
 
